@@ -4,4 +4,4 @@
 Assignment for TOP - creating a library.
 
 ## Technologies used
-* Javascripts
+* Javascript
