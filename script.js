@@ -1,3 +1,12 @@
+// Event listeners
+document.querySelector("#add-book").addEventListener('click', () => {
+    document.querySelector(".modal").classList.toggle('active');
+})
+
+document.querySelector("#close").addEventListener('click', () => {
+    document.querySelector(".modal").classList.toggle("active");
+})
+
 let library = [];
 
 function Book(title, author, read) {
