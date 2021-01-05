@@ -1,10 +1,10 @@
 // Event listeners
-document.querySelector("#add-book").addEventListener('click', () => {
-    document.querySelector(".modal").classList.toggle('active');
+document.querySelector("#add-book-btn").addEventListener('click', () => {
+    document.querySelector("#add-book-modal").classList.toggle('active');
 })
 
-document.querySelector("#close").addEventListener('click', () => {
-    document.querySelector(".modal").classList.toggle("active");
+document.querySelector("#add-book-modal #close").addEventListener('click', () => {
+    document.querySelector("#add-book-modal").classList.toggle("active");
 })
 
 let library = [];
