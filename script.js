@@ -7,7 +7,9 @@ document.querySelector("#add-book-modal #close").addEventListener('click', () =>
     document.querySelector("#add-book-modal").classList.toggle("active");
 })
 
-let library = [];
+let library;
+library = (localStorage.library == undefined) ? [] : JSON.parse(localStorage.library);
+drawLibrary();
 
 function Book(title, author, read) {
     this.title = title;
@@ -39,6 +41,8 @@ function drawLibrary() {
             drawLibrary();
         })
     })
+
+    localStorage.library = JSON.stringify(library);
 }
 
 function addBookForm() {
