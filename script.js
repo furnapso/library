@@ -7,6 +7,15 @@ document.querySelector("#close").addEventListener('click', () => {
     document.querySelector(".modal").classList.toggle("active");
 })
 
+document.querySelector("#submit").addEventListener('click', () => {
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector('#author').value;
+    let read = document.querySelector("#read").checked;
+    addBookToLibrary(title, author, read);
+    drawLibrary();
+    document.querySelector(".modal").classList.toggle("active");
+})
+
 let library = [];
 
 function Book(title, author, read) {
