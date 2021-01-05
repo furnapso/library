@@ -16,5 +16,13 @@ function Book(title, author, read) {
 }
 
 function addBookToLibrary(title, author, read) {
-    library.push(Book(title, author, read));
+    library.push(new Book(title, author, read));
+}
+
+function drawLibrary() {
+    const table = document.querySelector("tbody");
+    library.forEach(book => {
+        let checked = (book.read) ? '✓' : '✕';
+        table.innerHTML += `<tr><td>${book.title}</td><td>${book.author}</td><td>${checked}</td></tr>`
+    });
 }
