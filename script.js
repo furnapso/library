@@ -25,11 +25,11 @@ function drawLibrary() {
     const table = document.querySelector("tbody");
     table.innerHTML = "";
     library.forEach(book => {
-        let checked = (book.read) ? '✓' : '✕';
+        let read = (book.read) ? '✓' : '✕';
         table.innerHTML += `<tr>
         <td>${book.title}</td>
         <td>${book.author}</td>
-        <td>${checked}</td>
+        <td><a href="#" class="read-status" data-value="${library.indexOf(book)}">${read}</span></td>
         <td><button data-value="${library.indexOf(book)}">Delete</button></td>
         </tr>`
     });
@@ -38,6 +38,14 @@ function drawLibrary() {
         button.addEventListener('click', () => {
             let index = this['data-value'];
             library.splice(index, 1);
+            drawLibrary();
+        })
+    })
+
+    table.querySelectorAll('.read-status').forEach(a => {
+        a.addEventListener('click', (event) => {
+            let index = event.target.getAttribute("data-value");
+            library[index].read = (library[index].read) ? false : true;
             drawLibrary();
         })
     })
