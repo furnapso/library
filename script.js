@@ -24,8 +24,21 @@ function drawLibrary() {
     table.innerHTML = "";
     library.forEach(book => {
         let checked = (book.read) ? '✓' : '✕';
-        table.innerHTML += `<tr><td>${book.title}</td><td>${book.author}</td><td>${checked}</td></tr>`
+        table.innerHTML += `<tr>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${checked}</td>
+        <td><button data-value="${library.indexOf(book)}">Delete</button></td>
+        </tr>`
     });
+
+    table.querySelectorAll("button").forEach(button => {
+        button.addEventListener('click', () => {
+            let index = this['data-value'];
+            library.splice(index, 1);
+            drawLibrary();
+        })
+    })
 }
 
 function addBookForm() {
