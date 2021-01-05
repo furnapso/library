@@ -41,3 +41,14 @@
 table {
     table-layout: fixed;
 }
+
+.read-status:hover {
+    background-color: #33C3F0;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.read-status {
+    text-decoration: none;
+}
