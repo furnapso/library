@@ -7,4 +7,5 @@ Assignment for TOP - creating a persistent library catalogue.
 * Javascript
 * HTML
 * CSS
+* LocalStorage
 * [Skeleton](http://getskeleton.com/)
