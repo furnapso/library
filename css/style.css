@@ -1,0 +1,29 @@
+.read {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(220, 10%, 10%, 50%);
+}
+
+.modal-form {
+    max-width: 400px;
+    background-color: hsla(220, 10%, 90%);
+    padding: 3em;
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
