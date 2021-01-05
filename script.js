@@ -21,6 +21,7 @@ function addBookToLibrary(title, author, read) {
 
 function drawLibrary() {
     const table = document.querySelector("tbody");
+    table.innerHTML = "";
     library.forEach(book => {
         let checked = (book.read) ? '✓' : '✕';
         table.innerHTML += `<tr><td>${book.title}</td><td>${book.author}</td><td>${checked}</td></tr>`
@@ -33,5 +34,14 @@ function addBookForm() {
     let read = document.querySelector("#read").checked;
     addBookToLibrary(title, author, read);
     drawLibrary();
-    document.querySelector(".modal").classList.toggle("active");
+    let popup = document.querySelector(".modal");
+    popup.classList.toggle("active");
+    popup.querySelectorAll("input").forEach(input => {
+        if (input.type == "checkbox") {
+            input.checked = false;
+        }
+        else {
+            input.value = '';
+        }
+    })
 }
